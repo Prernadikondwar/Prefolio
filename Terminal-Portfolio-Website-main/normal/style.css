@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Montserrat', Arial, sans-serif;
+  background: #020710; /* Deep Space Black */
+  color: #ffffff;      /* Body text white for normal site */
+  position: relative;
+  overflow-x: hidden;
+}
+
+.stars-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: #020710;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #00bfff;
+  text-shadow: 0 0 12px #17e6ef, 0 0 1.5px #fff;
+}
+
+a, button {
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.12), 0 0 1px #fff;
+  transition: color 0.2s;
+}
+
+a:hover, button:hover {
+  color: #e6f7ff;
+  text-shadow: 0 0 12px #7DF9FF, 0 0 4px #fff;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+  padding: 64px 24px 24px 24px;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 60px;
+  background: rgba(0,15,40,0.55);
+  border-radius: 16px;
+  box-shadow: 0 0 22px #08314b77;
+  padding: 32px;
+  backdrop-filter: blur(2px);
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.3em;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.8em;
+  color: #ffffff;
+  text-shadow: 0 0 8px #00e1ef;
+}
+
+/* Resume section styles */
+#resume .title-container h2 {
+  color: #00bfff; /* match other h2 headings */
+}
+
+.resume-link {
+  background: #00bfff;
+  color: #001;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.description {
+  color: #ffffff;
+}
+
+/* Keep resume actions in a row */
+.resume-actions {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.resume-view {
+  color: #cfeff6;
+  text-decoration: none;
+  align-self: center;
+}
+
+@media (max-width: 520px) {
+  .resume-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .resume-view {
+    margin-left: 0;
+  }
+}
+
+.highlight {
+  color: #ffffff;
+  text-shadow: 0 0 22px #00f6ff, 0 0 1.5px #fff;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    max-width: 95vw;
+    padding: 16px 0;
+  }
+  section {
+    padding: 12vw 4vw;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+/* Layout helper: two-column containers for sections like Experience/Education */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.cell {
+  /* ensure consistent spacing inside cells */
+  min-height: 0;
+}
+
+.cell .name {
+  display: block;
+  font-weight: 700;
+  color: #00bfff; /* keep name/headings neon */
+  margin-bottom: 0.35rem;
+}
+
+.cell .description {
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.45;
+}
+
+@media (max-width: 700px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
